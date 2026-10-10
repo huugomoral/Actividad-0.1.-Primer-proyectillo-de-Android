@@ -21,13 +21,13 @@ class DialogClient {
     fun show(action: String, id: Int = -1) {
         when (action) {
             "ADD" -> {
-                onAdd?.invoke("Carlos", "Sánchez Ruiz", "677889900")
+                onAdd?.let { it("Carlos", "Sánchez Ruiz", "677889900") }
             }
             "UPDATE" -> {
-                onUpdate?.invoke(id, "CAMBIADO", "MODIFICADO", "600000000")
+                onUpdate?.let { it(id, "CAMBIADO", "MODIFICADO", "600000000") }
             }
             "DELETE" -> {
-                onDelete?.invoke(id)
+                onDelete?.let { it(id) }
             }
         }
     }
